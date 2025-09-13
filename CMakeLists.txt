@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.4)
+cmake_minimum_required(VERSION 3.5)
 project(Demos)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
@@ -10,7 +10,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-if (MSVC)
+if(MSVC)
     add_compile_options("$<$<CONFIG:DEBUG>:/MTd>")
     add_compile_options("$<$<CONFIG:RELEASE>:/MT>")
     add_compile_options(/std:c++14)
@@ -39,7 +39,7 @@ function(set_default_includes TARGET)
         "${CMAKE_SOURCE_DIR}/vendor/imgui"
     )
 
-    if (WIN32)
+    if(WIN32)
         find_package(Vulkan REQUIRED)
         target_include_directories(${TARGET} PRIVATE
             ${Vulkan_INCLUDE_DIRS}
@@ -56,7 +56,7 @@ function(add_app TARGET SOURCES)
     set_default_definitions(${TARGET})
     target_link_libraries(${TARGET} Vendor Common)
 
-    if (MSVC)
+    if(MSVC)
         target_compile_options(${TARGET} PRIVATE /wd4267 /wd4244 /wd4312)
     endif()
 endfunction()
