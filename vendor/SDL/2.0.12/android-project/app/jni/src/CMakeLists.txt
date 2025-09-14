@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.6)
+cmake_minimum_required(VERSION 3.10)
 
 project(MY_APP)
 
@@ -9,5 +9,3 @@ add_library(main SHARED)
 target_sources(main PRIVATE YourSourceHere.c)
 
 target_link_libraries(main SDL2)
-
-
