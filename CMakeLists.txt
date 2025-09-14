@@ -29,7 +29,7 @@ endfunction()
 
 function(set_default_includes TARGET)
     target_include_directories(${TARGET} PRIVATE
-        "${CMAKE_SOURCE_DIR}/demos"
+        "${CMAKE_SOURCE_DIR}/src"
         "${CMAKE_SOURCE_DIR}/vendor" # TODO needed?
         "${CMAKE_SOURCE_DIR}/vendor/glew/1.13/include"
         "${CMAKE_SOURCE_DIR}/vendor/SDL/2.0.12/include"
@@ -62,8 +62,8 @@ function(add_app TARGET SOURCES)
 endfunction()
 
 add_subdirectory("vendor")
-add_subdirectory("demos/common")
-add_subdirectory("demos/stb-truetype")
-add_subdirectory("demos/transform")
-add_subdirectory("demos/skybox")
-add_subdirectory("demos/imgui")
+add_subdirectory("src/common")
+add_subdirectory("src/stb-truetype")
+add_subdirectory("src/transform")
+add_subdirectory("src/skybox")
+add_subdirectory("src/imgui")
