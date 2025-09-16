@@ -6,17 +6,27 @@ most dependencies are included for easier building.
 There are no complex abstractions aka "engine", however a small library of shared code is still used.
 The goal is to keep things easy to understand while taking away some of the boilerplate.
 
-All demos are intended to run on Windows and were not tested on other systems.
+The demos have been tested on Windows. On macOS the OpenGL demos might still work, but have not been
+tested properly. Vulkan demos work only on Windows.
 
 Check also https://github.com/0xc0dec/demo-rs - an alternative experiment in Rust.
 
 # Building and running
 
+## Windows
+
 - Install Vulkan SDK. Make sure the VULKAN_SDK environment variable is set.
 - `cd build`.
 - `cmake -G "Visual Studio 16 2019" -A x64 ..` (or the alternative for the current MSVS at the time).
 - Build using the generated IDE files.
-- Run executables from `build/bin/<Debug|Release>/`.
+- Run demos from the project root, e.g.: `./build/bin/<Debug|Release>/<Demo executable>`.
+
+## macOS
+
+- `cd build`.
+- `cmake ..`.
+- `make`
+- Run demos from the project root, e.g.: `./build/bin/<Demo executable>`.
 
 # Controls
 

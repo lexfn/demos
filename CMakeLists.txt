@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
+
 project(Demos)
+include(cmake/CPM.cmake)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
@@ -32,12 +34,12 @@ function(set_default_includes TARGET)
         "${CMAKE_SOURCE_DIR}/src"
         "${CMAKE_SOURCE_DIR}/vendor" # TODO needed?
         "${CMAKE_SOURCE_DIR}/vendor/glew/1.13/include"
-        "${CMAKE_SOURCE_DIR}/vendor/SDL/2.0.12/include"
         "${CMAKE_SOURCE_DIR}/vendor/stb_truetype/1.11"
         "${CMAKE_SOURCE_DIR}/vendor/stb_image/2.15"
         "${CMAKE_SOURCE_DIR}/vendor/glm/0.9.8.4"
         "${CMAKE_SOURCE_DIR}/vendor/imgui"
     )
+    target_include_directories(${TARGET} PRIVATE ${SDL2_SOURCE_DIR}/include)
 
     if(WIN32)
         find_package(Vulkan REQUIRED)
