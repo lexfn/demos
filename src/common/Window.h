@@ -15,7 +15,7 @@
 class Window
 {
 public:
-    Window(uint32_t canvasWidth, uint32_t canvasHeight);
+    Window();
     Window(const Window &other) = delete;
     Window(Window &&other) = delete;
 
@@ -49,6 +49,8 @@ public:
 
 protected:
     SDL_Window *window_ = nullptr;
+    uint32_t canvasWidth_ = 0;
+    uint32_t canvasHeight_ = 0;
 
 private:
     float dt_ = 0;
@@ -57,9 +59,6 @@ private:
     bool hasMouseFocus_ = false;
     bool hasKeyboardFocus_ = false;
     bool firstUpdate_ = true;
-
-    uint32_t canvasWidth_{};
-    uint32_t canvasHeight_{};
 
     std::unordered_map<SDL_Keycode, bool> pressedKeys_;
     std::unordered_set<SDL_Keycode> releasedKeys_;

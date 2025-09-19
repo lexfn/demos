@@ -8,7 +8,8 @@
 #include "../Common.h"
 #include <SDL_syswm.h>
 
-vk::Window::Window(uint32_t canvasWidth, uint32_t canvasHeight, const char *title, bool fullScreen) : ::Window(canvasWidth, canvasHeight)
+vk::Window::Window(uint32_t canvasWidth, uint32_t canvasHeight, const char *title, bool fullScreen) : // TODO Make sure this works with retina; with OGL we have to update these via a SDL_GL* call.
+                                                                                                      canvasWidth_(canvasWidth), canvasHeight_(canvasHeight)
 {
     uint32_t flags = SDL_WINDOW_ALLOW_HIGHDPI;
     if (fullScreen)

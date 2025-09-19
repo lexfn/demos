@@ -6,8 +6,7 @@
 #include "Window.h"
 #include "Common.h"
 
-Window::Window(uint32_t canvasWidth, uint32_t canvasHeight) : canvasWidth_(canvasWidth),
-                                                              canvasHeight_(canvasHeight)
+Window::Window()
 {
     if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_EVENTS) < 0)
         panic("Failed to initialize SDL");

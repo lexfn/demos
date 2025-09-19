@@ -7,7 +7,7 @@
 #include "../Common.h"
 #include <GL/glew.h>
 
-gl::Window::Window(uint32_t canvasWidth, uint32_t canvasHeight, const char *title, bool fullScreen) : ::Window(canvasWidth, canvasHeight)
+gl::Window::Window(uint32_t canvasWidth, uint32_t canvasHeight, const char *title, bool fullScreen)
 {
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
@@ -24,6 +24,8 @@ gl::Window::Window(uint32_t canvasWidth, uint32_t canvasHeight, const char *titl
 
     glewExperimental = true;
     glewInit();
+
+    SDL_GL_GetDrawableSize(window_, reinterpret_cast<int *>(&this->canvasWidth_), reinterpret_cast<int *>(&this->canvasHeight_));
 
     SDL_GL_SetSwapInterval(1);
 }
