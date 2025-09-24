@@ -32,7 +32,6 @@ endfunction()
 function(set_default_includes TARGET)
     target_include_directories(${TARGET} PRIVATE
         "${CMAKE_SOURCE_DIR}/src"
-        "${CMAKE_SOURCE_DIR}/vendor" # TODO needed?
         "${CMAKE_SOURCE_DIR}/vendor/glew/1.13/include"
         "${CMAKE_SOURCE_DIR}/vendor/stb_truetype/1.11"
         "${CMAKE_SOURCE_DIR}/vendor/stb_image/2.15"
