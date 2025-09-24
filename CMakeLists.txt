@@ -19,7 +19,7 @@ if(MSVC)
     add_compile_options(/MP)
 endif()
 
-function(set_default_definitions TARGET)
+function(set_default_compile_defs TARGET)
     target_compile_definitions(${TARGET} PRIVATE
         HAVE_LIBC
         GLEW_STATIC
@@ -29,7 +29,7 @@ function(set_default_definitions TARGET)
     )
 endfunction()
 
-function(set_default_includes TARGET)
+function(set_default_include_paths TARGET)
     target_include_directories(${TARGET} PRIVATE
         "${CMAKE_SOURCE_DIR}/src"
         "${CMAKE_SOURCE_DIR}/vendor/glew/1.13/include"
@@ -53,8 +53,8 @@ function(add_app TARGET SOURCES)
     file(GLOB SRC ${SOURCES})
     source_group("" FILES ${SRC})
     add_executable(${TARGET} ${SRC})
-    set_default_includes(${TARGET})
-    set_default_definitions(${TARGET})
+    set_default_include_paths(${TARGET})
+    set_default_compile_defs(${TARGET})
     target_link_libraries(${TARGET} vendor common)
 
     if(MSVC)

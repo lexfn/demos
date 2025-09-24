@@ -74,4 +74,4 @@ elseif(APPLE)
     )
 endif()
 
-set_default_definitions(vendor)
+set_default_compile_defs(vendor)
