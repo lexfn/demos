@@ -1,7 +1,7 @@
 # About
 
 Graphics demos I made for playing around and learning. The code is (hopefully) clean and self-documented,
-most dependencies are included for easier building.
+most dependencies are included or downloaded automatically for easier building.
 
 There are no complex abstractions aka "engine", however a small library of shared code is still used.
 The goal is to keep things easy to understand while taking away some of the boilerplate.
