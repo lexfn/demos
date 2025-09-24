@@ -15,7 +15,7 @@ endif()
 source_group("glew" FILES ${DEMOS_VENDOR_GLEW_SRC})
 source_group("imgui" FILES ${DEMOS_VENDOR_IMGUI_COMMON_SRC} ${DEMOS_VENDOR_IMGUI_PLATFORM_SRC})
 
-add_library(Vendor STATIC
+add_library(vendor STATIC
     ${DEMOS_VENDOR_GLEW_SRC}
     ${DEMOS_VENDOR_IMGUI_COMMON_SRC} ${DEMOS_VENDOR_IMGUI_PLATFORM_SRC}
 )
@@ -28,20 +28,20 @@ CPMAddPackage(
     GIT_TAG release-2.32.2
 )
 
-target_link_libraries(Vendor ${OPENGL_LIBRARY} ${DEMOS_VENDOR_PLATFORM_LIBS} SDL2::SDL2)
+target_link_libraries(vendor ${OPENGL_LIBRARY} ${DEMOS_VENDOR_PLATFORM_LIBS} SDL2::SDL2)
 
-target_include_directories(Vendor PRIVATE
+target_include_directories(vendor PRIVATE
     "."
     "glew/1.13/include"
     "imgui"
 )
 
-set_target_properties(Vendor PROPERTIES FOLDER vendor)
+set_target_properties(vendor PROPERTIES FOLDER vendor)
 
 if(WIN32)
     find_package(Vulkan REQUIRED)
 
-    target_include_directories(Vendor PRIVATE
+    target_include_directories(vendor PRIVATE
         ${Vulkan_INCLUDE_DIRS}
         "${Vulkan_INCLUDE_DIRS}/vulkan"
     )
@@ -74,4 +74,4 @@ elseif(APPLE)
     )
 endif()
 
-set_default_definitions(Vendor)
+set_default_definitions(vendor)

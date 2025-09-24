@@ -1,2 +1,2 @@
-add_app(Skybox_GL "gl/*.cpp;gl/*.h")
-set_target_properties(Skybox_GL PROPERTIES FOLDER src)
+add_app(skybox_gl "gl/*.cpp;gl/*.h")
+set_target_properties(skybox_gl PROPERTIES FOLDER src)

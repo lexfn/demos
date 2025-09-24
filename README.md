@@ -52,11 +52,11 @@ Skybox rendering on a single quad mesh using a bit of shader magic.
 
 ![Image](/src/skybox/screenshot.png?raw=true)
 
-## [TrueType](/src/stb-truetype) [GL]
+## [TrueType](/src/stb_truetype) [GL]
 
 TrueType font rendering using [stb_truetype](https://github.com/nothings/stb) library.
 
-![Image](/src/stb-truetype/screenshot.png?raw=true)
+![Image](/src/stb_truetype/screenshot.png?raw=true)
 
 ## To be continued?...
 
