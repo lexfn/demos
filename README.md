@@ -42,7 +42,7 @@ Basic [ImGui](https://github.com/ocornut/imgui) integration example.
 
 ## [Transform](/src/transform) [GL]
 
-Object transform hierarchies and (first person) camera via reusable [`Transform`](src/common/Transform.h) and [`Camera`](src/common/Camera.h) classes and a helper [spectator function](src/common/Spectator.h).
+Object transform hierarchies and (first person) camera via reusable [`Transform`](src/common/transform.h) and [`Camera`](src/common/camera.h) classes and a helper [spectator function](src/common/spectator.h).
 
 ![Image](/src/transform/screenshot.png?raw=true)
 

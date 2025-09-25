@@ -1,0 +1,25 @@
+/**
+ * Copyright (c) Aleksey Fedotov
+ * MIT licence
+ */
+
+#pragma once
+
+#include "../window.h"
+
+namespace gl
+{
+    class Window final : public ::Window
+    {
+    public:
+        Window(uint32_t canvasWidth, uint32_t canvasHeight, const char *title, bool fullScreen);
+        ~Window();
+
+        auto sdlGLContext() const -> SDL_GLContext { return context_; }
+
+        void endUpdate() override;
+
+    private:
+        SDL_GLContext context_ = nullptr;
+    };
+}
