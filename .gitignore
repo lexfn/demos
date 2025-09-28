@@ -10,7 +10,7 @@
 *.user
 .vscode
 /build/**/*
-!/build/*.cmd
+!/build/.keepme
 *VC.*db*
 *.vs
 *DS_Store*
