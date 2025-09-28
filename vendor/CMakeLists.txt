@@ -28,8 +28,6 @@ CPMAddPackage(
     GIT_TAG release-2.32.2
 )
 
-target_link_libraries(vendor ${OPENGL_LIBRARY} ${DEMOS_VENDOR_PLATFORM_LIBS} SDL2::SDL2)
-
 target_include_directories(vendor PRIVATE
     "."
     "glew/1.13/include"
@@ -72,4 +70,5 @@ elseif(APPLE)
     )
 endif()
 
+target_link_libraries(vendor ${OPENGL_LIBRARY} ${DEMOS_VENDOR_PLATFORM_LIBS} SDL2::SDL2)
 set_default_compile_defs(vendor)
