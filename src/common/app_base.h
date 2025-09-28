@@ -8,6 +8,7 @@
 #include "window.h"
 #include <memory>
 #include <vector>
+#include <string>
 
 class AppBase
 {

@@ -10,6 +10,7 @@ source_group("gl" FILES ${GL_SRC})
 source_group("vk" FILES ${VK_SRC})
 
 add_library(common ${SRC} ${GL_SRC} ${VK_SRC})
+set_target_properties(common PROPERTIES FOLDER src)
 set_default_include_paths(common)
 set_default_compile_defs(common)
 

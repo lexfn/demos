@@ -36,8 +36,6 @@ target_include_directories(vendor PRIVATE
     "imgui"
 )
 
-set_target_properties(vendor PROPERTIES FOLDER vendor)
-
 if(WIN32)
     find_package(Vulkan REQUIRED)
 
