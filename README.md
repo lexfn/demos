@@ -15,18 +15,19 @@ Check also https://github.com/0xc0dec/demo-rs - an alternative experiment in Rus
 
 ## Windows
 
-- Install Vulkan SDK. Make sure the VULKAN_SDK environment variable is set.
+- Install Microsoft Visual Studio, make sure the C++ compiler is included in the installation. The project was last tested with MSVS 2022.
+- Install Vulkan SDK. Make sure the `VULKAN_SDK` environment variable is set.
 - `cd build`.
-- `cmake -G "Visual Studio 16 2019" -A x64 ..` (or the alternative for the current MSVS at the time).
-- Build using the generated IDE files.
-- Run demos from the project root, e.g.: `./build/bin/<Debug|Release>/<Demo executable>`.
+- `cmake -A x64 ..`.
+- Build the `ALL BUILD` target in MSVS.
+- Run demos from the project root, e.g.: `./build/bin/<Debug|Release>/<executable>`.
 
 ## macOS
 
 - `cd build`.
 - `cmake ..`.
 - `make`
-- Run demos from the project root, e.g.: `./build/bin/<Demo executable>`.
+- Run demos from the project root, e.g.: `./build/bin/<executable>`.
 
 # Controls
 
